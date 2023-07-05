@@ -1,0 +1,15 @@
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\bin\Debug\net6.0\NumberGuessing.exe
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\bin\Debug\net6.0\NumberGuessing.deps.json
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\bin\Debug\net6.0\NumberGuessing.runtimeconfig.json
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\bin\Debug\net6.0\NumberGuessing.dll
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\bin\Debug\net6.0\NumberGuessing.pdb
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.csproj.AssemblyReference.cache
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.AssemblyInfoInputs.cache
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.AssemblyInfo.cs
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.csproj.CoreCompileInputs.cache
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.dll
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\refint\NumberGuessing.dll
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.pdb
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\NumberGuessing.genruntimeconfig.cache
+C:\Users\Capio\source\repos\NumberGuessing\NumberGuessing\obj\Debug\net6.0\ref\NumberGuessing.dll
