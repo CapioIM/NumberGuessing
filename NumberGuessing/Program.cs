@@ -19,13 +19,14 @@
 
                 Random rng = new Random();
                 int randomNumber = rng.Next(1, 101);    // random number between 1 and 100 generated and stored in variable
-                int userGuess = 0;                          // user input variable
-                const int USER_IS_CLOSE_TO_GUESS = 5;    // userGuess number is checked if is within this amount of numbers off against randomNumber
-                int triesLeft = 5;              // 5 attempts
+                int userGuess = 0;                      // user input variable
+                const int USER_IS_CLOSE_TO_GUESS = 5;   // userGuess number is checked if is within this amount of numbers off against randomNumber
+                const int tries = 5;                    // number of attempts allowed
+                int triesLeft = tries;                  // number of tries left
 
-                for (int i = 0; i <= 5; i++)
+                for (int i = 0; i <= tries; i++)
                 {
-                    if (i < 5)
+                    if (i < tries)
                     {
                         if (i > 0)
                         {
@@ -54,7 +55,7 @@
                         }
                     }
                     //Loss condition and loop breaks
-                    if (i == 5)
+                    if (i == tries)
                     {
                         Console.WriteLine("You lose");
                         Console.WriteLine("Oh no! You will be lucky next time !!!");
