@@ -4,31 +4,28 @@
     {
         static void Main(string[] args)
         {
-
-
             while (true)
             {
                 // Introduction text
                 Console.WriteLine("-------------------------------");
                 Console.WriteLine("Welcome to number guessing Game");
                 Console.WriteLine("-------------------------------");
-
                 Console.WriteLine("Computer has memorised random number between 1 and 100.");
                 Console.WriteLine("Your objective is to guess number computer have chosen.");
                 Console.WriteLine("In order to win game you will need to guess number within 5 attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
                 Console.WriteLine("----------------------------------------------------------------------------");
-
                 Console.WriteLine("\nLet's begin'!");
 
 
                 Random rng = new Random();
-                int randomNumber = rng.Next(1, 100);
+                int randomNumber = rng.Next(1, 101);
                 int userGuess = 0;
+                int triesLeft = 5;
+                const int closeByFive = 5;  // userGuess number is checked if is within 5 numbers against randomNumber
 
-                int closeByFive = 5;
 
-                for (int triesLeft = 5; triesLeft >= 0; triesLeft--)
+                for (int i = 0; i <= 5; i++)
                 {
                     if (triesLeft > 0)
                     {
@@ -73,6 +70,7 @@
                     {
                         Console.WriteLine($"Your guess is within {closeByFive} numbers off !");
                     }
+                    triesLeft--;
                 }
                 //start game again
                 Console.WriteLine("Would you like to Try Again ? Y = Yes , any key is for no");
