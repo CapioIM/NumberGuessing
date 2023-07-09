@@ -1,3 +1,6 @@
 /NumberGuessing/bin/*
 /NumberGuessing/obj/*
 .vs/*
+/NumberGuessing/build/*
+/NumberGuessing/Debug/*
+

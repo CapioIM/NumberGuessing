@@ -19,15 +19,15 @@
 
                 Random rng = new Random();
                 int randomNumber = rng.Next(1, 101);    // random number between 1 and 100 generated and stored in variable
-                int userGuess = 0;              // user input variable
-                int triesLeft = 5;              // number of attempts
-                const int CLOSE_BY_FIVE = 5;    // userGuess number is checked if is within this amount of numbers off against randomNumber
+                int userGuess = 0;                          // user input variable
+                const int USER_IS_CLOSE_TO_GUESS = 5;    // userGuess number is checked if is within this amount of numbers off against randomNumber
+                int triesLeft = 5;              // 5 attempts
 
                 for (int i = 0; i <= 5; i++)
                 {
-                    if (triesLeft > 0)
+                    if (i < 5)
                     {
-                        if (triesLeft < 5)
+                        if (i > 0)
                         {
                             Console.WriteLine($"Tries left : {triesLeft}");
                         }
@@ -54,7 +54,7 @@
                         }
                     }
                     //Loss condition and loop breaks
-                    if (triesLeft == 0)
+                    if (i == 5)
                     {
                         Console.WriteLine("You lose");
                         Console.WriteLine("Oh no! You will be lucky next time !!!");
@@ -63,9 +63,9 @@
                     }
 
                     // You're close if guess is 5 off
-                    if (Math.Abs(randomNumber - userGuess) <= CLOSE_BY_FIVE)
+                    if (Math.Abs(randomNumber - userGuess) <= USER_IS_CLOSE_TO_GUESS)
                     {
-                        Console.WriteLine($"Your guess is within {CLOSE_BY_FIVE} numbers off !");
+                        Console.WriteLine($"Your guess is within {USER_IS_CLOSE_TO_GUESS} numbers off !");
                     }
 
                     triesLeft--;                                                 // Variable for number of tries deducted by 1
