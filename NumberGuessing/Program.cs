@@ -15,15 +15,13 @@
                 Console.WriteLine("In order to win game you will need to guess number within 5 attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
                 Console.WriteLine("----------------------------------------------------------------------------");
-                Console.WriteLine("\nLet's begin'!");
-
+                Console.WriteLine("\nLet's begin!");
 
                 Random rng = new Random();
-                int randomNumber = rng.Next(1, 101);
-                int userGuess = 0;
-                int triesLeft = 5;
-                const int closeByFive = 5;  // userGuess number is checked if is within 5 numbers against randomNumber
-
+                int randomNumber = rng.Next(1, 101);    // random number between 1 and 100 generated and stored in variable
+                int userGuess = 0;              // user input variable
+                int triesLeft = 5;              // number of attempts
+                const int CLOSE_BY_FIVE = 5;    // userGuess number is checked if is within this amount of numbers off against randomNumber
 
                 for (int i = 0; i <= 5; i++)
                 {
@@ -37,7 +35,7 @@
                         //read user text/convert to int
                         userGuess = Convert.ToInt32(Console.ReadLine());
 
-                        //comparison / Win condition , and loop breaks
+                        //comparison / Win condition , after for loop breaks
                         if (userGuess == randomNumber)
                         {
                             Console.WriteLine("You win!!!! You can have tasty bisquit now!");
@@ -64,13 +62,13 @@
                         break;
                     }
 
-
                     // You're close if guess is 5 off
-                    if (Math.Abs(randomNumber - userGuess) <= closeByFive)
+                    if (Math.Abs(randomNumber - userGuess) <= CLOSE_BY_FIVE)
                     {
-                        Console.WriteLine($"Your guess is within {closeByFive} numbers off !");
+                        Console.WriteLine($"Your guess is within {CLOSE_BY_FIVE} numbers off !");
                     }
-                    triesLeft--;
+
+                    triesLeft--;                                                 // Variable for number of tries deducted by 1
                 }
                 //start game again
                 Console.WriteLine("Would you like to Try Again ? Y = Yes , any key is for no");
