@@ -1,6 +1,3 @@
-NumberGuessing\bin
-NumberGuessing\obj
-vs\NumberGuessing
-NumberGuessing\build
-NumberGuessing\Debug
-
+/NumberGuessing/bin/*
+/NumberGuessing/obj/*
+.vs/*
