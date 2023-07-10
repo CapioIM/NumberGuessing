@@ -6,34 +6,38 @@
         {
             while (true)
             {
+                Random rng = new Random();
+                const int RANDOM_MIN_VALUE = 1;
+                const int RANDOM_MAX_VALUE = 101;
+                int randomNumber = rng.Next(RANDOM_MIN_VALUE, RANDOM_MAX_VALUE);    // random number between 1 and 100 generated and stored in variable
+                int userGuess = 0;                                                  // user input variable
+                const int USER_IS_CLOSE_TO_GUESS = 5;                               // userGuess number is checked if is within this amount of numbers off against randomNumber
+                const int TRIES = 5;                                                // number of attempts allowed
+                int triesLeft = TRIES;                                              // number of tries left
+
                 // Introduction text
                 Console.WriteLine("-------------------------------");
                 Console.WriteLine("Welcome to number guessing Game");
                 Console.WriteLine("-------------------------------");
-                Console.WriteLine("Computer has memorised random number between 1 and 100.");
+                Console.WriteLine($"Computer has memorised random number between {RANDOM_MIN_VALUE} and {RANDOM_MAX_VALUE - 1}.");
                 Console.WriteLine("Your objective is to guess number computer have chosen.");
-                Console.WriteLine("In order to win game you will need to guess number within 5 attempts.");
+                Console.WriteLine($"In order to win game you will need to guess number within {TRIES} attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
                 Console.WriteLine("----------------------------------------------------------------------------");
                 Console.WriteLine("\nLet's begin!");
 
-                Random rng = new Random();
-                int randomNumber = rng.Next(1, 101);    // random number between 1 and 100 generated and stored in variable
-                int userGuess = 0;                      // user input variable
-                const int USER_IS_CLOSE_TO_GUESS = 5;   // userGuess number is checked if is within this amount of numbers off against randomNumber
-                const int tries = 5;                    // number of attempts allowed
-                int triesLeft = tries;                  // number of tries left
 
-                for (int i = 0; i <= tries; i++)
+                for (int i = 0; i < TRIES; i++)
                 {
-                    if (i < tries)
-                    {
-                        if (i > 0)
+ 
+                        if (i > 0)              //every guess write amount of tries left after 1st guess
                         {
                             Console.WriteLine($"Tries left : {triesLeft}");
+                            triesLeft--;                                                 // Variable for number of tries deducted by 1
                         }
+
                         Console.WriteLine("What's your lucky guess ? ");
-                        //read user text/convert to int
+                        //convert user guess to int
                         userGuess = Convert.ToInt32(Console.ReadLine());
 
                         //comparison / Win condition , after for loop breaks
@@ -53,26 +57,22 @@
                         {
                             Console.WriteLine("Number you entered is too high.");
                         }
-                    }
-                    //Loss condition and loop breaks
-                    if (i == tries)
+                        // You're close if guess is 5 off
+                        if (Math.Abs(randomNumber - userGuess) <= USER_IS_CLOSE_TO_GUESS)
+                        {
+                            Console.WriteLine($"You'r close!");
+                        }
+                    
+                }
+                    //  code runs when run out of tries , Loss condition and loop breaks
+                    if (randomNumber != userGuess)
                     {
                         Console.WriteLine("You lose");
                         Console.WriteLine("Oh no! You will be lucky next time !!!");
                         Console.WriteLine($"Computer had in mind number {randomNumber}.");
-                        break;
                     }
-
-                    // You're close if guess is 5 off
-                    if (Math.Abs(randomNumber - userGuess) <= USER_IS_CLOSE_TO_GUESS)
-                    {
-                        Console.WriteLine($"Your guess is within {USER_IS_CLOSE_TO_GUESS} numbers off !");
-                    }
-
-                    triesLeft--;                                                 // Variable for number of tries deducted by 1
-                }
                 //start game again
-                Console.WriteLine("Would you like to Try Again ? Y = Yes , any key is for no");
+                Console.WriteLine("Would you like to try again ? Y = Yes , any key is for No");
                 string repeatGame = Console.ReadLine().ToLower();
                 if (repeatGame == "y")
                 {
