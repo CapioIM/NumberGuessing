@@ -13,7 +13,6 @@
                 int userGuess = 0;                                                  // user input variable
                 const int USER_IS_CLOSE_TO_GUESS = 5;                               // userGuess number is checked if is within this amount of numbers off against randomNumber
                 const int TRIES = 5;                                                // number of attempts allowed
-                int triesLeft = TRIES;                                              // number of tries left
 
                 // Introduction text
                 Console.WriteLine("-------------------------------");
@@ -32,8 +31,7 @@
  
                         if (i > 0)              //every guess write amount of tries left after 1st guess
                         {
-                            Console.WriteLine($"Tries left : {triesLeft}");
-                            triesLeft--;                                                 // Variable for number of tries deducted by 1
+                            Console.WriteLine($"Tries left : {TRIES - i}");
                         }
 
                         Console.WriteLine("What's your lucky guess ? ");
