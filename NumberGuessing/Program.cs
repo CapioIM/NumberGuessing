@@ -16,8 +16,7 @@ namespace NumberGuessing
             {
                 int randomNumber = rng.Next(RANDOM_NUMBER_MIN_VALUE, RANDOM_NUMBER_MAX_VALUE);    // random number between Min value and (Max Value -1) generated and stored in variable
                 int userGuess = 0;                                                                // user input variable
-
-                // Introduction text
+                                                                                                  // Introduction text
                 Console.WriteLine("-------------------------------");
                 Console.WriteLine("Welcome to number guessing Game");
                 Console.WriteLine("-------------------------------");
@@ -26,7 +25,8 @@ namespace NumberGuessing
                 Console.WriteLine($"In order to win game you will need to guess number within {TRIES} attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
                 Console.WriteLine("----------------------------------------------------------------------------");
-                Console.WriteLine("\nLet's begin!");
+                Console.WriteLine("Let's begin!");
+                Console.WriteLine();
 
                 for (int i = 0; i < TRIES; i++)
                 {
