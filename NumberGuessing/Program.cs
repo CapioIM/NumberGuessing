@@ -4,7 +4,6 @@ namespace NumberGuessing
 {
     internal class Program
     {
-
         public static Random rng = new Random();
         public const int RANDOM_NUMBER_MIN_VALUE = 1;                                             // random Min Value
         public const int RANDOM_NUMBER_MAX_VALUE = 101;                                           // random Max Value -1
@@ -16,7 +15,7 @@ namespace NumberGuessing
             while (true)
             {
                 int randomNumber = rng.Next(RANDOM_NUMBER_MIN_VALUE, RANDOM_NUMBER_MAX_VALUE);    // random number between Min value and (Max Value -1) generated and stored in variable
-                int userGuess = 0;                                                                      // user input variable
+                int userGuess = 0;                                                                // user input variable
 
                 // Introduction text
                 Console.WriteLine("-------------------------------");
