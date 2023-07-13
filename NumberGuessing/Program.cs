@@ -7,8 +7,9 @@ namespace NumberGuessing
         public static Random rng = new Random();
         public const int RANDOM_NUMBER_MIN_VALUE = 1;                                             // random Min Value
         public const int RANDOM_NUMBER_MAX_VALUE = 101;                                           // random Max Value -1
-        public const int USER_IS_CLOSE_TO_GUESS = 5;                                              // userGuess number is checked if is within this amount of numbers off against randomNumber
+        public const int CLOSE_TO_GUESS = 5;                                                      // userGuess number is checked if is within this amount of numbers off against randomNumber
         public const int TRIES = 5;                                                               // number of attempts allowed
+        public const string USER_CHOICE_Y_LOWERCASE = "y";
 
         static void Main(string[] args)
         {
@@ -56,7 +57,7 @@ namespace NumberGuessing
                         Console.WriteLine("Number you entered is too high.");
                     }
 
-                    if (Math.Abs(randomNumber - userGuess) <= USER_IS_CLOSE_TO_GUESS)             // You're close if guess is 5 off
+                    if (Math.Abs(randomNumber - userGuess) <= CLOSE_TO_GUESS)             // You're close if guess is 5 off
                     {
                         Console.WriteLine($"You'r close!");
                     }
@@ -72,7 +73,7 @@ namespace NumberGuessing
                 //start game again
                 Console.WriteLine("Would you like to try again ? Y = Yes , any key is for No");
                 string repeatGame = Console.ReadLine().ToLower();
-                if (repeatGame == "y")
+                if (repeatGame == USER_CHOICE_Y_LOWERCASE)
                 {
                     Console.Clear();
                     continue;
