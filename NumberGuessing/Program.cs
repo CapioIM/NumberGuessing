@@ -6,44 +6,40 @@ namespace NumberGuessing
     {
 
         public static Random rng = new Random();
-        public class Constants
-        {
-            public const int RANDOM_NUMBER_MIN_VALUE = 1;                                                    // random Min Value
-            public const int RANDOM_NUMBER_MAX_VALUE = 101;                                                  // random Max Value -1
-            public const int USER_IS_CLOSE_TO_GUESS = 5;                                              // userGuess number is checked if is within this amount of numbers off against randomNumber
-            public const int TRIES = 5;                                                               // number of attempts allowed
-        }
+        public const int RANDOM_NUMBER_MIN_VALUE = 1;                                             // random Min Value
+        public const int RANDOM_NUMBER_MAX_VALUE = 101;                                           // random Max Value -1
+        public const int USER_IS_CLOSE_TO_GUESS = 5;                                              // userGuess number is checked if is within this amount of numbers off against randomNumber
+        public const int TRIES = 5;                                                               // number of attempts allowed
+
         static void Main(string[] args)
         {
-
             while (true)
             {
-                int randomNumber = rng.Next(Constants.RANDOM_NUMBER_MIN_VALUE, Constants.RANDOM_NUMBER_MAX_VALUE);    // random number between Min value and (Max Value -1) generated and stored in variable
+                int randomNumber = rng.Next(RANDOM_NUMBER_MIN_VALUE, RANDOM_NUMBER_MAX_VALUE);    // random number between Min value and (Max Value -1) generated and stored in variable
                 int userGuess = 0;                                                                      // user input variable
 
                 // Introduction text
                 Console.WriteLine("-------------------------------");
                 Console.WriteLine("Welcome to number guessing Game");
                 Console.WriteLine("-------------------------------");
-                Console.WriteLine($"Computer has memorised random number between {Constants.RANDOM_NUMBER_MIN_VALUE} and {Constants.RANDOM_NUMBER_MAX_VALUE - 1}.");
+                Console.WriteLine($"Computer has memorised random number between {RANDOM_NUMBER_MIN_VALUE} and {RANDOM_NUMBER_MAX_VALUE - 1}.");
                 Console.WriteLine("Your objective is to guess number computer have chosen.");
-                Console.WriteLine($"In order to win game you will need to guess number within {Constants.TRIES} attempts.");
+                Console.WriteLine($"In order to win game you will need to guess number within {TRIES} attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
                 Console.WriteLine("----------------------------------------------------------------------------");
                 Console.WriteLine("\nLet's begin!");
 
-
-                for (int i = 0; i < Constants.TRIES; i++)
+                for (int i = 0; i < TRIES; i++)
                 {
 
                     if (i > 0)                                                                             //every guess write amount of tries left after 1st guess
                     {
-                        Console.WriteLine($"Tries left : {Constants.TRIES - i}");
+                        Console.WriteLine($"Tries left : {TRIES - i}");
                     }
 
                     Console.WriteLine("What's your lucky guess ? ");
                     userGuess = Convert.ToInt32(Console.ReadLine());                                       //convert user guess to int
-                    
+
                     if (userGuess == randomNumber)                                                         //comparison / Win condition , after for loop breaks
                     {
                         Console.WriteLine("You win!!!! You can have tasty bisquit now!");
@@ -61,7 +57,7 @@ namespace NumberGuessing
                         Console.WriteLine("Number you entered is too high.");
                     }
 
-                    if (Math.Abs(randomNumber - userGuess) <= Constants.USER_IS_CLOSE_TO_GUESS)             // You're close if guess is 5 off
+                    if (Math.Abs(randomNumber - userGuess) <= USER_IS_CLOSE_TO_GUESS)             // You're close if guess is 5 off
                     {
                         Console.WriteLine($"You'r close!");
                     }
