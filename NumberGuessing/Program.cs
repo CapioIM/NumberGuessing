@@ -25,15 +25,15 @@ namespace NumberGuessing
                 Console.WriteLine($"In order to win game you will need to guess number within {TRIES} attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
                 Console.WriteLine("----------------------------------------------------------------------------");
-                Console.WriteLine("Let's begin!");
                 Console.WriteLine();
+                Console.WriteLine("Let's begin!");
 
                 for (int i = 0; i < TRIES; i++)
                 {
 
                     if (i > 0)                                                                             //every guess write amount of tries left after 1st guess
                     {
-                        Console.WriteLine($"Tries left : {TRIES - i}");
+                        Console.WriteLine($"Attempts left : {TRIES - i}");
                     }
 
                     Console.WriteLine("What's your lucky guess ? ");
@@ -79,7 +79,7 @@ namespace NumberGuessing
                 }
                 else
                 {
-                    return;
+                    break;
                 }
 
             }
