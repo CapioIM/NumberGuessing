@@ -6,7 +6,7 @@ namespace NumberGuessing
     {
         public static Random rng = new Random();
         public const int RANDOM_NUMBER_MIN_VALUE = 1;                                             // random Min Value
-        public const int RANDOM_NUMBER_MAX_VALUE = 101;                                           // random Max Value -1
+        public const int RANDOM_NUMBER_MAX_VALUE = 100;                                           // random Max Value -1
         public const int CLOSE_TO_GUESS = 5;                                                      // userGuess number is checked if is within this amount of numbers off against randomNumber
         public const int TRIES = 5;                                                               // number of attempts allowed
         public const string USER_CHOICE_Y_LOWERCASE = "y";
@@ -15,13 +15,13 @@ namespace NumberGuessing
         {
             while (true)
             {
-                int randomNumber = rng.Next(RANDOM_NUMBER_MIN_VALUE, RANDOM_NUMBER_MAX_VALUE);    // random number between Min value and (Max Value -1) generated and stored in variable
+                int randomNumber = rng.Next(RANDOM_NUMBER_MIN_VALUE, RANDOM_NUMBER_MAX_VALUE + 1);    // random number between Min value and (Max Value -1) generated and stored in variable
                 int userGuess = 0;                                                                // user input variable
                                                                                                   // Introduction text
                 Console.WriteLine("-------------------------------");
                 Console.WriteLine("Welcome to number guessing Game");
                 Console.WriteLine("-------------------------------");
-                Console.WriteLine($"Computer has memorised random number between {RANDOM_NUMBER_MIN_VALUE} and {RANDOM_NUMBER_MAX_VALUE - 1}.");
+                Console.WriteLine($"Computer has memorised random number between {RANDOM_NUMBER_MIN_VALUE} and {RANDOM_NUMBER_MAX_VALUE}.");
                 Console.WriteLine("Your objective is to guess number computer have chosen.");
                 Console.WriteLine($"In order to win game you will need to guess number within {TRIES} attempts.");
                 Console.WriteLine("Also computer will let you know number you entered is too high or too low.");
