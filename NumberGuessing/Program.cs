@@ -31,7 +31,6 @@ namespace NumberGuessing
 
                 for (int i = 0; i < TRIES; i++)
                 {
-
                     if (i > 0)                                                                             //every guess write amount of tries left after 1st guess
                     {
                         Console.WriteLine($"Attempts left : {TRIES - i}");
@@ -61,7 +60,6 @@ namespace NumberGuessing
                     {
                         Console.WriteLine($"You'r close!");
                     }
-
                 }
 
                 if (randomNumber != userGuess)                                                              // Loss condition 
@@ -82,7 +80,6 @@ namespace NumberGuessing
                 {
                     break;
                 }
-
             }
         }
     }
